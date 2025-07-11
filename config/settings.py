@@ -33,10 +33,19 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # CSRF ke liye trusted origin
-CSRF_TRUSTED_ORIGINS = [
-    "https://mhebazar.vercel.app",
-    "https://localhost:3000",
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",           # ✅ local dev
+    "https://mhebazar.vercel.app",    # ✅ prod
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",           # ✅ local
+    "https://mhebazar.vercel.app",    # ✅ prod
+]
+
+
 
 # Agar aap proxy ke piche Django run kar rahe ho:
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -155,7 +164,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
