@@ -3,9 +3,8 @@ certifi==2025.7.9
 charset-normalizer==3.4.2
 Django==5.2.4
 django-cors-headers==4.7.0
-django-filter==1.1.0
+django-filter==23.5         # ✅ upgraded
 djangorestframework==3.16.0
-djangorestframework-filters==0.11.1
 dotenv==0.9.9
 gunicorn==23.0.0
 idna==3.10
